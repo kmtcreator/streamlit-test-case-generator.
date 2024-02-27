@@ -7,7 +7,7 @@ import os
 
 # Initialize the OpenAI client with the API key
 # openai.api_key = OPENAI_API_KEY
-openai.api_key = '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'
+openai.api_key = "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"
 
 # Define the function to generate test cases
 def generate_test_cases(requirement):
