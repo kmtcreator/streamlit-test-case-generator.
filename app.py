@@ -1,21 +1,16 @@
 import streamlit as st
 import openai
 import os
-from openai import OpenAI
 
-client = OpenAI(
-    # This is the default and can be omitted
-    api_key=os.environ.get("OPENAI_API_KEY"),
-)
 # Retrieve the API key from the environment variable
-# OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # Initialize the OpenAI client with the API key
-# openai.api_key = OPENAI_API_KEY
+openai.api_key = OPENAI_API_KEY
 
 # Define the function to generate test cases
 def generate_test_cases(requirement):
-    response = client.chat.completions.create(
+    response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a helpful assistant capable of generating software test cases."},
